@@ -1,8 +1,8 @@
-🏗️ 3-Tier Application on AWS (Terraform)
+## 🏗️ 3-Tier Application on AWS (Terraform)
 
 This project deploys a 3-tier architecture (Frontend, Backend, and Database) using Terraform on AWS Cloud.
 
-📚 Architecture Overview
+## 📚 Architecture Overview
 
                 ┌────────────────────────────┐
                 │        Internet Users       │
@@ -24,7 +24,7 @@ This project deploys a 3-tier architecture (Frontend, Backend, and Database) usi
                    └─────────────────────┘
 
 
-🚀 Features
+## 🚀 Features
 
 1. VPC with public and private subnets across multiple AZs
 
@@ -41,7 +41,7 @@ This project deploys a 3-tier architecture (Frontend, Backend, and Database) usi
 1. Load Balancers for frontend and backend
 
 
-🧩 Prerequisites
+## 🧩 Prerequisites
 
 1. AWS Account
 
