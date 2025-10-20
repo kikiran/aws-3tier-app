@@ -167,6 +167,13 @@ resource "aws_security_group" "paytm_bastion_public_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags = {
     Name = "bastion_public_sg"
   }
@@ -199,6 +206,13 @@ resource "aws_security_group" "paytm_client_sg" {
     security_groups = [aws_security_group.paytm_backend_alb_sg.id]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   tags = {
     Name = "client_sg"
   }
@@ -227,6 +241,13 @@ resource "aws_security_group" "paytm_backend_sg" {
 
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   tags = {
     Name = "backend_sg"
@@ -245,6 +266,13 @@ resource "aws_security_group" "paytm_database_sg" {
     to_port         = 3306
     protocol        = "tcp"
     security_groups = [aws_security_group.paytm_backend_sg.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {
@@ -272,6 +300,12 @@ resource "aws_security_group" "paytm_frontend_alb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   tags = {
     Name = "frontend_alb_sg"
   }
@@ -304,6 +338,13 @@ resource "aws_security_group" "paytm_backend_alb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
   tags = {
     Name = "backend_alb_sg"
   }
