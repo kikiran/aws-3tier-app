@@ -229,9 +229,17 @@ resource "aws_security_group" "paytm_backend_sg" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.paytm_client_sg.id, aws_security_group.paytm_frontend_alb_sg.id]
-
+    security_groups = [aws_security_group.paytm_client_sg.id, aws_security_group.paytm_backend_alb_sg.id]
   }
+
+//Custome Port
+ ingress {
+    from_port       = 3000
+    to_port         = 3000
+    protocol        = "tcp"
+    security_groups = [aws_security_group.paytm_client_sg.id]
+  }
+
 
   ingress {
     from_port       = 22
